@@ -22,9 +22,11 @@ import { createContext, useEffect, useState } from "react";
 function Bottom_bar() 
 {
     const [PopupOpen, setPopupOpen] = useState(false);
+    const [closepop, setclosepopup] = useState(false);
+
   return (
     <div>
-    {PopupOpen && <Popup closebtn={setPopupOpen} />}
+    {PopupOpen && <Popup closebtn={closepop} />}
     <div className='row bottom_bar'>
       
     <div className='col-2 home_image'>
