@@ -6,14 +6,19 @@ import Receive from './receive.png';
 import Convert from './converts.png';
 import Send from './send.png';
 import { Button } from 'bootstrap';
-function Popup() {
-    const handlechange = () => {
-        console.log("hello");
-    }
-    
+function Popup(props) {
+    console.log(props);
+    // const handlechange = () => {
+    //     console.log("hello");
+    // }
+
+    const[show, setShow]=useState(true)
+     const handleRemove=()=>{
+        setShow(props.closebtn);
+     }
 
     return (
-        <div>
+        <div style={{display: show ? 'block' : 'none'}}>
         <div className='row back7'>
             <div className='col-11'>
             <div className='col-'></div>
@@ -22,8 +27,10 @@ function Popup() {
                 <div className='col-12 transiction'>checkout top10 crypto movers</div>
                 
                 </div>
-                <div className='col-1'>  
-                <img src={close}></img>
+                <div className='col-1' >  
+                {/* <button onClick={handleRemove}><img src={close} /></button> */}
+                {/* <h1 onClick={handleRemove}>X</h1> */}
+                <img src={Remove}  alt="" onClick={handleRemove}/>
                 </div>
                 
 
